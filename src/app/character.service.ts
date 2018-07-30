@@ -14,8 +14,11 @@ export class CharacterService {
   ) { }
 
   get(): Observable<Char[]> {
+
+    const headers = new HttpHeaders()
+    headers.append('Content-Type', 'application/json')
     const chars = <Observable<Char[]>> this.http
-        .get(this.url)
+        .get(this.url, { headers })
 
     return chars
   }

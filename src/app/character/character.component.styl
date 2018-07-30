@@ -18,8 +18,21 @@
     width: 60%
     height: 85%
 
+    @media only screen and (min-width: 321px) and (max-width: 728px)
+      left: 2.5%
+      top: 2.5%
+      width: 95%
+      height: 95%
+
+
+    @media only screen and (max-width: 320px)
+      left: 7.5%
+      top: 2.5%
+      width: 85%
+      height: 95%
+
     .header
-      padding: $spacing.xs
+      padding: $spacing.lg
       background-color: $colors.primary
       display: flex
       color: $colors.text2
@@ -35,7 +48,7 @@
         outline: none
 
     .body
-      padding: $spacing.xs
+      padding: $spacing.lg
 
         //open-sans no corpo
         // montserrat no titulo

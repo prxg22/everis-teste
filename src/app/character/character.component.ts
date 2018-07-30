@@ -23,6 +23,7 @@ export class CharacterComponent implements OnInit {
   @Input() char: Char
   @Output() onClose: EventEmitter<any> = new EventEmitter<any>()
   @ViewChild('modal') modal: ElementRef
+  @ViewChild('container') container: ElementRef
 
   constructor(private rd: Renderer2) { }
 
@@ -37,7 +38,8 @@ export class CharacterComponent implements OnInit {
     if ($event.keyCode === 27) this.close()
   }
 
-  close() {
+  close(ev?: MouseEvent) {
+    if (ev && ev.target !== this.container.nativeElement) return
     this.onClose.emit()
     this.char = null
   }

@@ -1,4 +1,4 @@
-<div class="container" (click)="close()">
+<div class="container" #container (click)="close($event)">
   <div #modal class="modal" role="dialog" (keydown.esc)="close()">
     <div class="header" >
       <h2>{{char.name}}</h2>

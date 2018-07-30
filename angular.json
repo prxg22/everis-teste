@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "everis-teste"
+  "defaultProject": "everis-teste",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "styl"
+    }
+  }
 }

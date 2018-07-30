@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let char of chars">
+    <button type="button" (click)="selected = char">{{char.name}}</button>
+  </li>
+</ul>
+<div *ngIf="selected">
+  <app-character [char]="selected"></app-character>
+</div>

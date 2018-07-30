@@ -5,11 +5,16 @@ ul
 
   padding: 0
   margin: 0
+  height: 100%
 
   list-style: none
   flex-wrap: wrap
+  overflow-y: auto
+
+  padding-bottom: 10%
 
   li
+    display: block
     text-align: center
     min-width: s("calc(100% / 3 - (%s * 2))", $spacing.md)
     margin: $spacing.md
@@ -22,3 +27,7 @@ ul
       color: $colors.text2
       border-radius: $spacing.xs
       border: $borders.primary
+      cursor: pointer
+
+      &:hover
+        background-color: alpha($colors.primary, 0.8)

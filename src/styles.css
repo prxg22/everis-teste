@@ -6,3 +6,51 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+@keyframes pong {
+  0% {
+    width: 10%;
+    left: 0;
+  }
+
+  25% {
+    width: 60%;
+    left: 5%;
+  }
+
+  50% {
+    width: 10%;
+    left: 100%;
+  }
+
+  75% {
+    width: 60%;
+    left: 5%;
+  }
+
+  100% {
+    width: 10%;
+    left: 0;
+  }
+}
+
+.loader {
+  margin: 50vh auto;
+  background-color: rgba(138, 149, 163, .4);
+  width: 100px;
+  height: 3px;
+
+}
+
+.loader:after {
+  content: '';
+  display: block;
+  width: 10%;
+  height: 100%;
+  background-color: #3FBF7F;
+  animation: pong;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: relative;
+}

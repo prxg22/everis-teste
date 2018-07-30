@@ -1,0 +1,41 @@
+@import "../styles/base.styl"
+
+.container
+  width: calc(100vw)
+  height: calc(100vh)
+  background-color: rgba(0, 0, 0, 0.6)
+  position: absolute
+  top: 0
+
+  .modal
+    opacity: 1
+    background-color: white
+
+    position: relative
+    left: 20%
+    top: 5%
+
+    width: 60%
+    height: 85%
+
+    .header
+      padding: $spacing.xs
+      background-color: $colors.primary
+      display: flex
+      color: $colors.text2
+      justify-content: space-between
+
+      button
+        background: none
+        color: $colors.text2
+        font-size: 1.2rem
+        font-weight: bold
+        border: none
+        cursor: pointer
+        outline: none
+
+    .body
+      padding: $spacing.xs
+
+        //open-sans no corpo
+        // montserrat no titulo

@@ -1,8 +1,11 @@
-<ul>
-  <li *ngFor="let char of chars">
-    <button type="button" (click)="selected = char">{{char.name}}</button>
-  </li>
-</ul>
-<div *ngIf="selected">
-  <app-character [char]="selected"></app-character>
+<div>
+  <ul>
+    <li *ngFor="let char of chars">
+      <button type="button" (click)="selected = char">{{char.name}}</button>
+    </li>
+  </ul>
+  <div *ngIf="selected">
+    <app-character [char]="selected" (onClose)="selected = null"></app-character>
+  </div>
 </div>
+<div *ngIf="isLoading" class="loader" #loading></div>

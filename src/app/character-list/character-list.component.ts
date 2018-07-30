@@ -1,228 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Char } from '../interfaces'
+import { CharacterService } from '../character.service'
 
-const chars = [
-  {
-      "name": "Luke Skywalker",
-      "height": "172",
-      "mass": "77",
-      "hair_color": "blond",
-      "skin_color": "fair",
-      "eye_color": "blue",
-      "birth_year": "19BBY",
-      "gender": "male"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  },
-  {
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-  }
-]
 
 @Component({
   selector: 'app-character-list',
@@ -230,11 +9,16 @@ const chars = [
   styleUrls: ['./character-list.component.styl']
 })
 export class CharacterListComponent implements OnInit {
-  chars: Char[] = chars
+  chars: Char[] = []
   selected: Char = null
 
-  constructor() { }
+  get isLoading() {
+    return !this.chars || this.chars.length < 1
+  }
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
+    this.characterService.get().subscribe(chars => this.chars = chars)
   }
+
 }

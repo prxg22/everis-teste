@@ -18,18 +18,18 @@ ul
     min-width: s("calc(100% / 3 - (%s * 2))", $spacing.xs)
     margin: $spacing.xs
 
-    @media only screen and (min-width: 321px) and (max-width: 728px)
+    @media only screen and (min-width: 426px) and (max-width: 728px)
       min-width: s("calc(100% / 2 - (%s * 2))", $spacing.lg)
       margin: $spacing.lg
 
-    @media only screen and (max-width: 320px)
+    @media only screen and (max-width: 425px)
       min-width: s("calc(100% - (%s * 2))", $spacing.md)
       margin: $spacing.md
 
 
     button
       padding: $spacing.lg
-      width: 100%
+      min-width: $char-size
       max-width: $char-size
       height: $char-size
       background-color: $colors.primary

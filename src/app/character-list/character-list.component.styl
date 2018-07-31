@@ -1,24 +1,15 @@
 @import "../styles/base.styl"
 
-breakpoints = {
-  xs: { min: 0, max: 320 }
-  sm: { min: 321, max: 425 }
-  md: { min: 426 }
-}
-
-// main page style
 ul
   display: flex
 
   padding: 0
+  padding-bottom: 120px
   margin: 0
-  height: 100%
 
   list-style: none
   flex-wrap: wrap
   overflow-y: auto
-
-  padding-bottom: 10%
 
   li
     display: block
@@ -39,6 +30,7 @@ ul
     button
       padding: $spacing.lg
       width: 100%
+      max-width: $char-size
       height: $char-size
       background-color: $colors.primary
       color: $colors.text2

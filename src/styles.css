@@ -38,10 +38,10 @@ body {
 .loader {
   position: absolute;
   background-color: rgba(138, 149, 163, .4);
-  width: 100px;
+  width: 20%;
   height: 3px;
   top: 50%;
-  left: 50%;
+  left: 45%;
 }
 
 .loader:after {
